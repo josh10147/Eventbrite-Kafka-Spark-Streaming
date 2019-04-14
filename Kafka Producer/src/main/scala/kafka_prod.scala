@@ -14,7 +14,8 @@ object kafka_prod {
     val producer = new KafkaProducer[String, String](props)
     val topics = "eventbrite"
 
-    val url1 = "https://www.eventbriteapi.com/v3/events/search/?location.address=187+NW+28th+St%2C+Miami%2C+FL+33127&location.within=1mi&categories=103&include_adult_events=on&expand=venue,category,subcategory&token=VLE67CFPLOTDMS3NJC56"
+    //insert your API URL credentials
+    val url1 = "https://www.eventbriteapi.com/v3/events/search/?location.address=187+NW+28th+St%2C+Miami%2C+FL+33127&location.within=1mi&categories=103&include_adult_events=on&expand=venue,category,subcategory&token=##########"
     val response: HttpResponse[String] = Http(url1).header("Accept", "application/json").asString //convert api url to json
     val response_body = response.body
 
